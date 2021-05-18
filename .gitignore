@@ -34,6 +34,7 @@ packages/
 # Build products and files generated during gameplay
 [Rr]esources/GameData/kOS/Plugins/
 [Rr]esources/*.dll
+[Rr]esources/*.dll.mdb
 [Rr]esources/GameData/*.dll
 !Resources/GameData/kOS/ICSharpCode.SharpZipLib.dll
 

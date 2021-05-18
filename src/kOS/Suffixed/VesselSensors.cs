@@ -18,7 +18,8 @@ namespace kOS.Suffixed
 
         private void InitializeSuffixes()
         {
-            AddSuffix("ACC", new Suffix<Vector>(() => GetSensorVectorValue("ACC")));
+            //          AddSuffix("ACC", new Suffix<Vector>(() => GetSensorVectorValue("ACC")));
+            AddSuffix("ACC", new Suffix<Vector>(() => GetAcceleration()));
             AddSuffix("PRES", new Suffix<ScalarValue>(() => GetSensorDoubleValue("PRES")));
             AddSuffix("TEMP", new Suffix<ScalarValue>(() => GetSensorDoubleValue("TEMP")));
             AddSuffix("GRAV", new Suffix<Vector>(() => GetSensorVectorValue("GRAV")));
@@ -49,6 +50,11 @@ namespace kOS.Suffixed
                 }
             }
             throw new KOSException("Cannot find sensor for " + sensorType);
+        }
+
+        private Vector GetAcceleration()
+        {
+            return new Vector(vessel.acceleration);
         }
 
         private double GetSensorDoubleValue(string sensorType)
