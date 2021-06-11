@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using kOS.Safe.Utilities;
@@ -131,7 +131,7 @@ namespace kOS.Safe.Execution
 
         private void ThrowIfInvalid(object item)
         {
-            if (!SafeHouse.Config.EnableSafeMode)
+/*          if (!SafeHouse.Config.EnableSafeMode)
                 return;
             if (!(item is double || item is float || item is ScalarValue))
                 return;
@@ -147,7 +147,8 @@ namespace kOS.Safe.Execution
             {
                 // TODO: make an IKOSException for this:
                 throw new Exception("Tried to push Infinity into the stack.");
-            }
+            } */
+            // NaN is valid!
         }
 
         /// <summary>
